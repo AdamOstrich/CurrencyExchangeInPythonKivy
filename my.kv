@@ -1,0 +1,36 @@
+<MyGrid>
+    how_much: how_much
+    GridLayout:
+        cols: 1
+        size: root.width-100, root.height-100
+        pos: 50, 50
+        spacing: 5
+
+        Label:
+            text: "EXCHANGER"
+
+        GridLayout:
+            cols: 2
+            spacing: 3
+            background_color: ''#0000FF'
+            Label:
+                text: "How much money to exchange: "
+            TextInput:
+                id: how_much
+                multiline: False
+            Spinner:
+                id: From
+                text: "Choose currency to change:"
+                values: ['PLN', 'THB', 'USD', 'AUD', 'HKD', 'CAD', 'NZD', 'SGD', 'EUR', 'HUF', 'CHF', 'GBP', 'UAH', 'JPY', 'CZK', 'DKK', 'ISK', 'NOK', 'SEK', 'HRK', 'RON', 'BGN', 'TRY', 'ILS', 'CLP', 'PHP', 'MXN', 'ZAR', 'BRL', 'MYR', 'RUB', 'IDR', 'INR', 'KRW', 'CNY', 'XDR']
+                on_text: root.spinner1(From.text)
+            Spinner:
+                id: To
+                text: "Choose currency"
+                values: ['PLN', 'THB', 'USD', 'AUD', 'HKD', 'CAD', 'NZD', 'SGD', 'EUR', 'HUF', 'CHF', 'GBP', 'UAH', 'JPY', 'CZK', 'DKK', 'ISK', 'NOK', 'SEK', 'HRK', 'RON', 'BGN', 'TRY', 'ILS', 'CLP', 'PHP', 'MXN', 'ZAR', 'BRL', 'MYR', 'RUB', 'IDR', 'INR', 'KRW', 'CNY', 'XDR']
+                on_text: root.spinner2(To.text)
+        Button:
+            text: "Submit"
+            on_press: root.submit_clicked()
+        Label:
+            id: ans
+            text: ""
